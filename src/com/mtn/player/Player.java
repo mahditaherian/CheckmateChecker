@@ -67,6 +67,9 @@ public class Player {
     public GameState checkState() {
         King myKing = getKing(myPieces);
         GameState state = GameState.CONTINIOUS;
+        if (myKing==null){
+            return state;
+        }
         List<Piece> checkingPieces = new ArrayList<Piece>();
         Map<ChessCell, List<Piece>> dangerCellsMap = new HashMap<ChessCell, List<Piece>>();
 //        List<Piece> shouldCheckingPieces = new ArrayList<Piece>();

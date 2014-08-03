@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FaridGhCheckmateChecker:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FaridGhCheckmateChecker_jar</output-path>
+    <root id="archive" name="FaridGhCheckmateChecker.jar">
+      <element id="module-output" name="FaridGhCheckmateChecker" />
+    </root>
+  </artifact>
+</component>
