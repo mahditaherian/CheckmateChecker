@@ -9,16 +9,17 @@ import com.mtn.pattern.Pattern;
  */
 public class Queen extends Piece {
     private final static Pattern movePattern = new Pattern(new int[][]{
-            {1,1},
-            {1,0},
-            {1,-1},
-            {-1,1},
-            {-1,0},
-            {-1,-1},
-            {0,1},
-            {0,-1},
+            {1, 1},
+            {1, 0},
+            {1, -1},
+            {-1, 1},
+            {-1, 0},
+            {-1, -1},
+            {0, 1},
+            {0, -1},
 
     }, true);
+
     public Queen(ChessBoard chessBoard, Color color, ChessCell position) {
         super(chessBoard, color, position);
     }

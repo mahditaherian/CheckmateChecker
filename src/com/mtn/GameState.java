@@ -1,7 +1,7 @@
 package com.mtn;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public enum GameState {
     CHECKMATING,

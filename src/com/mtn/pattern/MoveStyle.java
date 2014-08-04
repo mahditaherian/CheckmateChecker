@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class MoveStyle {
     protected ChessBoard chessBoard;

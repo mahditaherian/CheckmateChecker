@@ -2,11 +2,10 @@ package com.mtn.piece;
 
 import com.mtn.object.ChessBoard;
 import com.mtn.object.ChessCell;
-import com.mtn.pattern.MoveStyle;
 import com.mtn.pattern.Pattern;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class Knight extends Piece {
     private final static Pattern movePattern = new Pattern(new int[][]{

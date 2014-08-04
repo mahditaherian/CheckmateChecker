@@ -5,14 +5,14 @@ import com.mtn.object.ChessCell;
 import com.mtn.pattern.Pattern;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class Bishop extends Piece {
     private final static Pattern movePattern = new Pattern(new int[][]{
-            {1,1},
-            {-1,1},
-            {1,-1},
-            {-1,-1},
+            {1, 1},
+            {-1, 1},
+            {1, -1},
+            {-1, -1},
 
     }, true);
 

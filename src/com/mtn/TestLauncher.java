@@ -9,22 +9,16 @@ import com.mtn.player.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class TestLauncher {
 
     public static void main(String[] args) {
         ChessBoard board = new ChessBoard();
-        Piece piece = new King(board, Piece.Color.WHITE, board.getCell(0, 4));
-        Piece bishop1 = new Bishop(board, Piece.Color.WHITE, board.getCell(2, 4));
-        Piece rook1 = new Rook(board, Piece.Color.BLACK, board.getCell(1, 0));
-        Piece rook2 = new Rook(board, Piece.Color.BLACK, board.getCell(0, 0));
-        Piece queen = new Rook(board, Piece.Color.BLACK, board.getCell(7, 4));
         PieceManager pieceManager = new PieceManager();
 
         Piece.Color myColor, enemyColor;
@@ -47,7 +41,7 @@ public class TestLauncher {
                 }
             }
             System.out.println("so you are " + myColor.toString().toLowerCase() + " and your opponent is " + enemyColor.toString().toLowerCase() + ".");
-            int mypn = -1;
+            int mypn;
             while (true) {
                 System.out.print("Please enter your pieces count in chessboard: ");
                 String ln = bufferRead.readLine();
@@ -62,7 +56,7 @@ public class TestLauncher {
                     System.out.println("The input entry is not a valid integer number!");
                 }
             }
-            int enemypn = -1;
+            int enemypn;
             while (true) {
                 System.out.print("Please enter your opponent pieces count in chessboard: ");
                 String ln = bufferRead.readLine();
@@ -108,6 +102,8 @@ public class TestLauncher {
 
             System.out.println("Your state is " + s1);
             System.out.println("Your opponent's state is " + s2);
+            System.out.println("\n\n Enter any key to terminate program...");
+            bufferRead.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }

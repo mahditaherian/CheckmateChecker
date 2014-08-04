@@ -5,16 +5,17 @@ import com.mtn.object.ChessCell;
 import com.mtn.pattern.Pattern;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class Rook extends Piece {
     private final static Pattern movePattern = new Pattern(new int[][]{
-            {0,1},
-            {1,0},
-            {0,-1},
-            {-1,0},
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0},
 
     }, true);
+
     public Rook(ChessBoard chessBoard, Color color, ChessCell position) {
         super(chessBoard, color, position);
     }

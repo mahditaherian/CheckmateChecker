@@ -10,7 +10,7 @@ import com.mtn.piece.Piece;
 import java.util.*;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class Player {
     private PieceManager pieceManager;
@@ -67,7 +67,7 @@ public class Player {
     public GameState checkState() {
         King myKing = getKing(myPieces);
         GameState state = GameState.CONTINIOUS;
-        if (myKing==null){
+        if (myKing == null) {
             return state;
         }
         List<Piece> checkingPieces = new ArrayList<Piece>();

@@ -9,14 +9,14 @@ import com.mtn.pattern.Pattern;
  */
 public class King extends Piece {
     private final static Pattern movePattern = new Pattern(new int[][]{
-            {1,1},
-            {1,0},
-            {1,-1},
-            {-1,1},
-            {-1,0},
-            {-1,-1},
-            {0,1},
-            {0,-1},
+            {1, 1},
+            {1, 0},
+            {1, -1},
+            {-1, 1},
+            {-1, 0},
+            {-1, -1},
+            {0, 1},
+            {0, -1},
 
     }, false);
 

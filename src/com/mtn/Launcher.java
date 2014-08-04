@@ -31,8 +31,8 @@ public class Launcher {
         manager.addPiece(wb1);
         manager.addPiece(wb2);
 
-        Player white = new Player(manager, chessBoard, Piece.Color.WHITE,Piece.Color.BLACK);
-        Player black = new Player(manager, chessBoard, Piece.Color.BLACK,Piece.Color.WHITE);
+        Player white = new Player(manager, chessBoard, Piece.Color.WHITE, Piece.Color.BLACK);
+        Player black = new Player(manager, chessBoard, Piece.Color.BLACK, Piece.Color.WHITE);
 
         while (true) {
             if (!turn(white)) {

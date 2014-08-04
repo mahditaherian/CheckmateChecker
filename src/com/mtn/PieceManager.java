@@ -1,6 +1,9 @@
 package com.mtn;
 
-import com.mtn.object.*;
+import com.mtn.object.ChessBoard;
+import com.mtn.object.ChessCell;
+import com.mtn.object.IllegalChessPositionException;
+import com.mtn.object.PieceType;
 import com.mtn.piece.*;
 
 import java.util.ArrayList;
@@ -9,13 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class PieceManager {
     protected ChessBoard chessBoard;
-//    protected List<Piece> whitePieces;
+    //    protected List<Piece> whitePieces;
 //    protected List<Piece> blackPieces;
-    protected Map<Piece.Color , List<Piece>> colorPiecesMap;
+    protected Map<Piece.Color, List<Piece>> colorPiecesMap;
 
 
     public PieceManager() {
@@ -23,8 +26,8 @@ public class PieceManager {
 //        whitePieces = new ArrayList<Piece>();
 //        blackPieces = new ArrayList<Piece>();
         colorPiecesMap = new HashMap<Piece.Color, List<Piece>>();
-        for (Piece.Color color: Piece.Color.values()){
-            colorPiecesMap.put(color,new ArrayList<Piece>());
+        for (Piece.Color color : Piece.Color.values()) {
+            colorPiecesMap.put(color, new ArrayList<Piece>());
         }
     }
 
@@ -66,11 +69,11 @@ public class PieceManager {
         addPiece(piece);
     }
 
-    public List<Piece> getPieces(Piece.Color color){
+    public List<Piece> getPieces(Piece.Color color) {
         return colorPiecesMap.get(color);
     }
 
-    public void addPiece(Piece piece){
+    public void addPiece(Piece piece) {
         colorPiecesMap.get(piece.getColor()).add(piece);
         chessBoard.register(piece);
     }

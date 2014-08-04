@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class AttackStyle extends MoveStyle {
     protected List<ChessCell> canAttackCells;
@@ -19,13 +19,12 @@ public class AttackStyle extends MoveStyle {
     }
 
 
-
     @Override
     public void update() {
         super.update();
         canAttackCells.clear();
-        for (ChessCell cell : canGoCells){
-            if(!cell.isEmpty() && !cell.getPiece().getColor().equals(piece.getColor())){
+        for (ChessCell cell : canGoCells) {
+            if (!cell.isEmpty() && !cell.getPiece().getColor().equals(piece.getColor())) {
                 canAttackCells.add(cell);
             }
         }

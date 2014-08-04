@@ -24,7 +24,7 @@ public abstract class Piece {
         this.moveStyle = new MoveStyle(chessBoard, this, getMovePattern(), piecesCanBlockWay());
     }
 
-    public void update(){
+    public void update() {
         moveStyle.update();
     }
 
@@ -48,11 +48,14 @@ public abstract class Piece {
         return moveStyle.getCanGoCells();
     }
 
-    public List<ChessCell> getCanReplaceCell() { return moveStyle.getCanReplaceCell();}
+    public List<ChessCell> getCanReplaceCell() {
+        return moveStyle.getCanReplaceCell();
+    }
 
     public List<ChessCell> getCanAttackCells() {
         return moveStyle.getCanAttackCells();
     }
+
     public java.util.Map<Piece, List<ChessCell>> getMoveCandidateCells() {
         return moveStyle.getMoveCandidateCells();
     }
@@ -74,7 +77,7 @@ public abstract class Piece {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName()+"{" +
+        return this.getClass().getSimpleName() + "{" +
                 "position=" + position +
                 ", color=" + color +
                 ", isDead=" + isDead +

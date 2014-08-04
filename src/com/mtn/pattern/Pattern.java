@@ -1,7 +1,7 @@
 package com.mtn.pattern;
 
 /**
- * Created by Mahdi
+ * @author Mahdi
  */
 public class Pattern {
     private int pattern[][];
