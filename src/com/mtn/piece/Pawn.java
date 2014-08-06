@@ -2,6 +2,7 @@ package com.mtn.piece;
 
 import com.mtn.object.ChessBoard;
 import com.mtn.object.ChessCell;
+import com.mtn.object.IllegalChessPositionException;
 import com.mtn.pattern.AttackStyle;
 import com.mtn.pattern.MoveStyle;
 import com.mtn.pattern.Pattern;
@@ -12,8 +13,7 @@ import java.util.List;
  * @author Mahdi
  */
 public class Pawn extends Piece {
-    private boolean firstTurn;
-    private ChessCell firstPosition;
+    private boolean firstPosition;
 
     private Pattern movePattern = new Pattern(new int[][]{
             {1, 0},
@@ -36,15 +36,17 @@ public class Pawn extends Piece {
 
     public Pawn(ChessBoard chessBoard, Color color, ChessCell position) {
         super(chessBoard, color, position);
-        firstPosition = position;
 
         if (color.equals(Color.WHITE)) {
             homePiece = true;
         } else {
             homePiece = false;
         }
-
+            firstPosition = false;
         if (!homePiece) {
+            if(position.getRow() == 6){
+                firstPosition = true;
+            }
             movePattern = new Pattern(new int[][]{
                     {-1, 0},
             }, false);
@@ -57,11 +59,23 @@ public class Pawn extends Piece {
                     {-1, -1},
                     {-1, 1},
             }, false);
+        }else {
+            if(position.getRow() == 1){
+                firstPosition = true;
+            }
         }
 
         firstMoveStyle = new MoveStyle(chessBoard, this, firstMovePattern, true);
         moveStyle = new MoveStyle(chessBoard, this, movePattern, true);
         attackStyle = new AttackStyle(chessBoard, this, attackPattern, true);
+    }
+
+    @Override
+    public void updatePosition(ChessCell newPosition) throws IllegalChessPositionException {
+        if(firstPosition && !newPosition.equals(position)){
+            firstPosition = false;
+        }
+        super.updatePosition(newPosition);
     }
 
     @Override
@@ -76,7 +90,7 @@ public class Pawn extends Piece {
 
     @Override
     public List<ChessCell> getCanGoCells() {
-        if (firstPosition.equals(position)) {
+        if (firstPosition) {
             return firstMoveStyle.getCanGoCells();
         } else {
             return moveStyle.getCanGoCells();
@@ -90,7 +104,7 @@ public class Pawn extends Piece {
 
     @Override
     public void update() {
-        if (firstPosition.equals(position)) {
+        if (firstPosition) {
             firstMoveStyle.update();
         } else {
             moveStyle.update();

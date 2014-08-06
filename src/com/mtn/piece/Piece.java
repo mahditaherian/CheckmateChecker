@@ -2,6 +2,7 @@ package com.mtn.piece;
 
 import com.mtn.object.ChessBoard;
 import com.mtn.object.ChessCell;
+import com.mtn.object.IllegalChessPositionException;
 import com.mtn.pattern.MoveStyle;
 import com.mtn.pattern.Pattern;
 
@@ -31,7 +32,7 @@ public abstract class Piece {
     protected abstract boolean piecesCanBlockWay();
 
 
-/*    public void updatePosition(ChessCell newPosition) throws IllegalChessPositionException {
+    public void updatePosition(ChessCell newPosition) throws IllegalChessPositionException {
         if (newPosition.equals(position)) {
             return;
         }
@@ -41,7 +42,7 @@ public abstract class Piece {
         }
 
         position = newPosition;
-    }*/
+    }
 
 
     public List<ChessCell> getCanGoCells() {
